@@ -23,14 +23,14 @@ function showMovies(movies){
 
     movies.forEach(movie => {
         
-        const {title,poster_path,vole_average,overview} = movie
+        const {title,poster_path,vote_average,overview} = movie
         const movieElement = document.createElement('div');
         movieElement.classList.add('movie');
         movieElement.innerHTML = `
             <img src="${IMG_PATH + poster_path}" alt="${title}">
             <div class="movie-info">
             <h3>${title}</h3>
-            <span class="${getClassByRate(vole_average)}">${vole_average}</span>
+            <span class="${getClassByRate(vote_average)}">${vote_average}</span>
 
             <div class="overview">
                 <h3>overview<h3/>
@@ -43,10 +43,10 @@ function showMovies(movies){
     });
 
 
-    function getClassByRate(vole_average) {
-        if (vole_average > 8) {
+    function getClassByRate(vote_average) {
+        if (vote_average > 8) {
             return 'green'
-        } else if(vole_average >= 5) {
+        } else if(vote_average >= 5) {
             return 'orange'
         }else{
             return 'red'
